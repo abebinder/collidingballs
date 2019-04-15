@@ -35,7 +35,7 @@ public class ControlPanel extends JPanel {
 		gravitySlider.setMinorTickSpacing(100);
 		gravitySlider.setPaintTicks(true);
 		
-		corSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, 85);
+		corSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, 100);
 		corSlider.setBorder(BorderFactory.createTitledBorder("Restitution - " + corSlider.getValue() + "%"));
 		corSlider.setMajorTickSpacing(10);
 		corSlider.setMinorTickSpacing(5);
