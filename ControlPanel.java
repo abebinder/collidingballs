@@ -106,13 +106,11 @@ public class ControlPanel extends JPanel {
 			
 			if (source == gravitySlider)
 			{
-				System.out.println("changing gravity");
 				source.setBorder(BorderFactory.createTitledBorder("Gravity - " + source.getValue() + "px/s"));
 				mainPanel.setGravity(source.getValue());
 			}
 			if (source == corSlider)
 			{
-				System.out.println("changing restitutio");
 				source.setBorder(BorderFactory.createTitledBorder("Restitution - " + source.getValue() + "%"));
 				float newvalue = ((float)source.getValue() )/ 100;
 				System.out.println(newvalue);
