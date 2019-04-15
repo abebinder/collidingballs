@@ -25,6 +25,9 @@ public class BallPanel extends Canvas {
 	private int maxFrameRate = 66;
 	private int currentFrameRate;
 
+	//counting collision
+	private int collisionCount=0;
+
 
 	public BallPanel()
 	{
@@ -193,7 +196,7 @@ public class BallPanel extends Canvas {
   		this.g2.setColor(Color.WHITE);
   		this.g2.drawString("FPS: " + currentFrameRate + " Balls: "  + ballCount, 15, 15);
 
-  		this.g2.drawString("Collisions : 0",400,200);
+  		this.g2.drawString("Collisions: " + Integer.toString(collisionCount),400,200);
 
 
   		if (!strategy.contentsLost()) strategy.show();
