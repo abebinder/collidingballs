@@ -253,12 +253,14 @@ public class BallPanel extends Canvas {
 
 			if (balls[i].position.getX() - balls[i].getRadius() < 0)
 			{
+				collisionCount++;
 				balls[i].position.setX(balls[i].getRadius()); // Place ball against edge
 				balls[i].velocity.setX(-(balls[i].velocity.getX() * Constants.restitution)); // Reverse direction and account for friction
 				balls[i].velocity.setY(balls[i].velocity.getY() * Constants.restitution);
 			}
 			else if (balls[i].position.getX() + balls[i].getRadius() > getWidth()) // Right Wall
 			{
+				collisionCount++;
 				balls[i].position.setX(getWidth() - balls[i].getRadius());		// Place ball against edge
 				balls[i].velocity.setX(-(balls[i].velocity.getX() * Constants.restitution)); // Reverse direction and account for friction
 				balls[i].velocity.setY((balls[i].velocity.getY() * Constants.restitution));
@@ -266,12 +268,14 @@ public class BallPanel extends Canvas {
 
 			if (balls[i].position.getY() - balls[i].getRadius() < 0)				// Top Wall
 			{
+				collisionCount++;
 				balls[i].position.setY(balls[i].getRadius());				// Place ball against edge
 				balls[i].velocity.setY(-(balls[i].velocity.getY() * Constants.restitution)); // Reverse direction and account for friction
 				balls[i].velocity.setX((balls[i].velocity.getX() * Constants.restitution));
 			}
 			else if (balls[i].position.getY() + balls[i].getRadius() > getHeight()) // Bottom Wall
 			{
+				collisionCount++;
 				balls[i].position.setY(getHeight() - balls[i].getRadius());		// Place ball against edge
 				balls[i].velocity.setY(-(balls[i].velocity.getY() * Constants.restitution));    // Reverse direction and account for friction
 				balls[i].velocity.setX((balls[i].velocity.getX() * Constants.restitution));
