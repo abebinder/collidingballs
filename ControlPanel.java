@@ -15,6 +15,7 @@ public class ControlPanel extends JPanel {
 	private JButton resetButton;
 	private JButton generateButton;
 	private JButton scatterButton;
+	private JButton estimatePiButton;
 	private JSlider gravitySlider;
 	private JSlider corSlider;
 	
@@ -28,7 +29,9 @@ public class ControlPanel extends JPanel {
 		resetButton = new JButton("Reset");
 		generateButton = new JButton("Generate");
 		scatterButton = new JButton("Scatter");
-		
+		estimatePiButton = new JButton("Estimate Pi");
+
+
 		gravitySlider = new JSlider(JSlider.HORIZONTAL, 0, 3000, 2000);
 		gravitySlider.setBorder(BorderFactory.createTitledBorder("Gravity - " + gravitySlider.getValue() + "px/s"));
 		gravitySlider.setMajorTickSpacing(200);
@@ -44,6 +47,7 @@ public class ControlPanel extends JPanel {
 		// add controls to panel
 		this.add(gravitySlider);
 		this.add(corSlider);
+		this.add(estimatePiButton);
 		this.add(scatterButton);
 		this.add(generateButton);
 		this.add(resetButton);
