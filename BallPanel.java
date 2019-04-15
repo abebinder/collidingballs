@@ -54,7 +54,7 @@ public class BallPanel extends Canvas {
 		long totalElapsedTime = 0;
 		int frameCount = 0;
 
-		Ball bigBall = new Ball(50,550,20,1f);
+		Ball bigBall = new Ball(50,550,20,100f);
 		balls[ballCount] = bigBall;
 		ballCount++;
 		Ball smallBall = new Ball(700,550,20,1f);
