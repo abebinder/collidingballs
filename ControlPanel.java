@@ -58,6 +58,7 @@ public class ControlPanel extends JPanel {
 		resetButton.addActionListener(buttonHandler);
 		scatterButton.addActionListener(buttonHandler);
 		generateButton.addActionListener(buttonHandler);
+		estimatePiButton.addActionListener(buttonHandler);
 		
 		SliderHandler sliderHandler = new SliderHandler();
 		gravitySlider.addChangeListener(sliderHandler);
@@ -85,6 +86,9 @@ public class ControlPanel extends JPanel {
 			if (source == scatterButton)
 			{
 				mainPanel.scatterBalls();
+			}
+			if(source == estimatePiButton){
+				mainPanel.sendBigBallTowardSmallBall();
 			}
 			
 			

@@ -131,6 +131,10 @@ public class BallPanel extends Canvas {
 		}
 	}
 
+	public void sendBigBallTowardSmallBall(){
+		balls[0].velocity.set(100,0);
+	}
+
 	public void render()
 	{
 		//System.out.printf("Width: %d Height: %d\n", getWidth(), getHeight());
