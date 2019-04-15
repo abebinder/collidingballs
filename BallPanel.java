@@ -291,7 +291,9 @@ public class BallPanel extends Canvas {
 				   (balls[j].position.getY() + balls[j].getRadius()) < (balls[i].position.getY() - balls[i].getRadius()))
 				   		continue;
 
-				balls[i].resolveCollision(balls[j]);
+				if(balls[i].resolveCollision(balls[j])){
+					collisionCount++;
+				}
 
 			}
 		}

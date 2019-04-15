@@ -79,7 +79,7 @@ public class Ball implements Comparable<Ball>{
 
 	}
 
-	public void resolveCollision(Ball ball)
+	public boolean resolveCollision(Ball ball)
 	{
 
 		// get the mtd
@@ -87,7 +87,7 @@ public class Ball implements Comparable<Ball>{
 		float r = getRadius() + ball.getRadius();
 		float dist2 = delta.dot(delta);
 
-		if (dist2 > r*r) return; // they aren't colliding
+		if (dist2 > r*r) return false; // they aren't colliding
 
 
 		float d = delta.getLength();
@@ -119,7 +119,7 @@ public class Ball implements Comparable<Ball>{
 		float vn = v.dot(mtd.normalize());
 
 		// sphere intersecting but moving away from each other already
-		if (vn > 0.0f) return;
+		if (vn > 0.0f) return true;
 
 		// collision impulse
 		float i = (-(1.0f + Constants.restitution) * vn) / (im1 + im2);
@@ -128,6 +128,7 @@ public class Ball implements Comparable<Ball>{
 		// change in momentum
 		this.velocity = this.velocity.add(impulse.multiply(im1));
 		ball.velocity = ball.velocity.subtract(impulse.multiply(im2));
+		return true;
 
 	}
 
